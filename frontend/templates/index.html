@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Email Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Spam Email Detection</h1>
+            <p>Enter an email message below to classify it as <strong>Spam</strong> or <strong>Ham</strong>.</p>
+        </header>
+
+        <form id="predict-form">
+            <textarea id="message" placeholder="Paste the email text here..." rows="8" required></textarea>
+            <button type="submit" id="submit-btn">Analyze Message</button>
+        </form>
+
+        <div id="result" class="result hidden">
+            <h2>Prediction Result</h2>
+            <div id="result-badge" class="badge"></div>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
